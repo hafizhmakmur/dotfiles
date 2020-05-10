@@ -117,7 +117,6 @@ set autoindent
 set softtabstop=4
 set tabstop=4
 set number
-colorscheme elflord
 
 " normally don't automatically format `text' as it is typed, IE only do this
 " with comments, at 79 characters:
