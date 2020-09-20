@@ -72,6 +72,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+      exec tmux
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -122,7 +126,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
             eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-export PATH=$PATH:~/.local/bin:~/.cabal/bin:~/gems/bin
+export PATH=$PATH:~/.local/bin:~/.cabal/bin:~/gems/bin:/opt/ghc/bin
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 
@@ -136,7 +140,6 @@ export PATH=$PATH:$HADOOP_HOME/bin:$JAVA_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/b
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

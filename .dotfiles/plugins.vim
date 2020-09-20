@@ -11,6 +11,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'scrooloose/syntastic'
+Plug 'panagosg7/vim-annotations'
 Plug 'https://github.com/ucsd-progsys/liquid-types.vim.git'
 Plug 'https://github.com/ryanpcmcquen/fix-vim-pasting.git'
 
